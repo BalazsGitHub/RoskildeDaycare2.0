@@ -1,6 +1,7 @@
 body{
     overflow-x: hidden !important;
     padding: 50px 100px !important;
+    background-color: cornflowerblue;
 }
 
 .row {
