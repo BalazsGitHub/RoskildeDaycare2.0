@@ -19,7 +19,7 @@ public class Application {
         try {
 
             Desktop d = Desktop.getDesktop();
-            d.browse(new URI("http://localhost:8094/"));
+            d.browse(new URI("http://localhost:8095/"));
 
         } catch (Exception e) {
             e.printStackTrace();

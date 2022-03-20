@@ -6,28 +6,41 @@ import javax.persistence.*;
 @Table(name = "children")
 public class Children {
         @Id
-        //ID COLUMN WILL BE GENERATED AUTOMATICALLY
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer id;
 
-        //nullable = false - means ITS REQUIRED
-        @Column(nullable = false, unique = false, length = 45)
-        private String name;
+        @Column(nullable = false, unique = false, length = 45, name = "first_name")
+        private String firstName;
+
+        @Column(nullable = false, unique = false, length = 45, name = "last_name")
+        private String lastName;
+
+        @Column(nullable = false, unique = false, length = 45, name = "parent_first_name")
+        private String parentFirstName;
+
+        @Column(nullable = false, unique = false, length = 45, name = "parent_last_name")
+        private String parentLastName;
 
         @Column(length = 45, nullable = false, name = "address")
         private String address;
+
         @Column(length = 45, nullable = false, name = "phone_number")
-        private String phoneNumber;
+        private String contactNumber;
 
-        public Children(String name, String address, String phoneNumber) {
-                this.name = name;
+
+        public Children(String firstName, String lastName, String parentFirstName, String parentLastName, String address, String contactNumber) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.parentFirstName = parentFirstName;
+                this.parentLastName = parentLastName;
                 this.address = address;
-                this.phoneNumber = phoneNumber;
+                this.contactNumber = contactNumber;
         }
 
-        public Children(){
+        public Children() {
 
         }
+
 
         public Integer getId() {
                 return id;
@@ -37,12 +50,36 @@ public class Children {
                 this.id = id;
         }
 
-        public String getName() {
-                return name;
+        public String getFirstName() {
+                return firstName;
         }
 
-        public void setName(String name) {
-                this.name = name;
+        public void setFirstName(String firstName) {
+                this.firstName = firstName;
+        }
+
+        public String getLastName() {
+                return lastName;
+        }
+
+        public void setLastName(String lastName) {
+                this.lastName = lastName;
+        }
+
+        public String getParentFirstName() {
+                return parentFirstName;
+        }
+
+        public void setParentFirstName(String parentFirstName) {
+                this.parentFirstName = parentFirstName;
+        }
+
+        public String getParentLastName() {
+                return parentLastName;
+        }
+
+        public void setParentLastName(String parentLastName) {
+                this.parentLastName = parentLastName;
         }
 
         public String getAddress() {
@@ -53,11 +90,11 @@ public class Children {
                 this.address = address;
         }
 
-        public String getPhoneNumber() {
-                return phoneNumber;
+        public String getContactNumber() {
+                return contactNumber;
         }
 
-        public void setPhoneNumber(String phoneNumber) {
-                this.phoneNumber = phoneNumber;
+        public void setContactNumber(String contactNumber) {
+                this.contactNumber = contactNumber;
         }
 }

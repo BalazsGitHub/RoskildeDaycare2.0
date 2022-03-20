@@ -8,49 +8,67 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer employee_id;
-    @Column(nullable = false, unique = false, length = 45)
-    private String name;
+    private Integer id;
 
-    @Column(length = 45, nullable = false, name = "first_name")
+    @Column(nullable = false, unique = false, length = 45, name = "first_name")
+    private String firstName;
+
+    @Column(nullable = false, unique = false, length = 45, name = "last_name")
+    private String lastName;
+
+    @Column(length = 45, nullable = false, name = "address")
     private String address;
-    @Column(length = 45, nullable = false, name = "last_name")
+    @Column(length = 45, nullable = false, name = "phone_number")
     private String phoneNumber;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "schedule_id")
     private Schedule employeeSchedule;
 
-    public Employee(){}
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id")
+    private User user_id;
 
-    public Employee(String name, String phoneNumber, String address) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
+
+    public Employee(String firstName, String lastName, String address, String phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.address = address;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Employee() {}
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getEmployee_id() {
-        return employee_id;
+        return id;
     }
 
-    public void setEmployee_id(Integer emplpoyee_id) {
-        this.employee_id = emplpoyee_id;
+    public void setEmployee_id(Integer id) {
+        this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getAddress() {
@@ -59,6 +77,14 @@ public class Employee {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public Schedule getEmployeeSchedule() {

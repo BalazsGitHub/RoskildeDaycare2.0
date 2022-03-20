@@ -27,18 +27,17 @@ public class InitialData {
 
     @PostConstruct
     public void initialiseDatabase(){
-        User user = new User("SandraAdmin", "admin123", "Sandra", "Bullok");
+        User user = new User("SandraAdmin", "admin123");
         userService.saveUser(user);
 
-        Employee employee1 = new Employee("John", "+545444554", "Some street");
-        Employee employee2 = new Employee("Tom", "+178754847", "Some street");
-        Employee employee3 = new Employee("Anna", "+487874545", "Some street");
+        Employee employee1 = new Employee("Tom", "Adams", "Some street", "+453939393");
+        Employee employee2 = new Employee("Daniel", "Szabo", "Some street", "+453934493");
 
         employeeService.saveEmployee(employee1);
         employeeService.saveEmployee(employee2);
-        employeeService.saveEmployee(employee3);
 
-        Children children1 = new Children("Laura", "some street", "459595");
+
+        Children children1 = new Children("Laura", "Thomasen", "David", "Thomasen", "Some street", "+5522392i39");
 
         childrenService.saveChildren(children1);
     }

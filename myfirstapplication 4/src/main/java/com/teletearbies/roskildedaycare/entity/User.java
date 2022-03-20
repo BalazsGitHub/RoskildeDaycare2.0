@@ -14,18 +14,12 @@ public class User {
     @Column(nullable = false, unique = false, length = 45)
     private String username;
 
-    @Column(length = 15)
+    @Column(nullable = false, length = 15)
     private String password;
-    @Column(length = 45, nullable = false, name = "first_name")
-    private String firstName;
-    @Column(length = 45, nullable = false, name = "last_name")
-    private String lastName;
 
-    public User(String username, String password, String firstName, String lastName) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
     }
 
     public User () {}
@@ -54,30 +48,12 @@ public class User {
         this.password = password;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
                 '}';
     }
 }

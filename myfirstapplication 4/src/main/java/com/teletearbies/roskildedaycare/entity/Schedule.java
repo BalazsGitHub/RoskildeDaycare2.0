@@ -12,6 +12,7 @@ public class Schedule {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer schedule_id;
 
+
     @OneToOne(mappedBy = "employeeSchedule")
     private Employee employee;
 

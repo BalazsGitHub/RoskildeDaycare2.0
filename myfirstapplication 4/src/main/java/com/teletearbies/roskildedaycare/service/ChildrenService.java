@@ -9,7 +9,9 @@ import java.util.List;
 
 @Service
 public class ChildrenService {
+
    @Autowired private ChildrenRepository childrenRepository;
+
 
     public void saveChildren(Children children) {
         childrenRepository.save(children);
