@@ -31,6 +31,10 @@
         <td>[[${children.adress}]]</td>
         <td>[[${children.contactNumber}]]</td>
         <td>
+        <td>
+          <a class="h4 mr-3" th:href="@{'/children/edit/' + ${children.id}}">Edit</a>
+          <a class="h4" th:href="@{'children/delete/' + ${children.id}}">Delete</a>
+        </td>
         </td>
       </tr>
     </th:block>
