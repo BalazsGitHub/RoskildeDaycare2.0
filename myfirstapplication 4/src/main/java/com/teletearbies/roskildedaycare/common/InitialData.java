@@ -18,7 +18,6 @@ public class InitialData {
     @Autowired
     UserService userService;
 
-
     @Autowired
     EmployeeService employeeService;
 

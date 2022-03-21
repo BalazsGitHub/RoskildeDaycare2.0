@@ -1,0 +1,37 @@
+<head th:replace="fragments/header :: head"></head>
+
+<body>
+<div class="container-fluid text-center">
+    <div>
+        <h2>Manage user</h2>
+        <div class="m-2">
+            <!--   <a class="h3"  th:href="@{/users/new}">Add new children</a> -->
+        </div>
+    </div>
+    <table class="table" table-bordered>
+        <thead class ="thead-dark"></thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th></th>
+        </tr>
+        <tbody>
+        <th:block th:each="user : ${listUsers}">
+            <tr>
+                <td>[[${user.id}]]</td>
+                <td>[[${user.username}]]</td>
+                <td>[[${children.password}]]</td>
+                <td>
+                <td>
+                    <a class="h4 mr-3" th:href="@{'/children/edit/' + ${user.id}}">Edit</a>
+                    <a class="h4" th:href="@{'children/delete/' + ${user.id}}">Delete</a>
+                </td>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

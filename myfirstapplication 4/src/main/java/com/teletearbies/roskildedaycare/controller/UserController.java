@@ -14,14 +14,12 @@ public class UserController {
 
    @Autowired
     UserService userService;
-/*
-    @RequestMapping(/"userList")
+    @RequestMapping("/userList")
     public String listAllUsers(Model model) {
         List<User> listUsers = userService.getAllUsers();
         model.addAttribute("listUsers", listUsers);
         return "users";
-    }*/
-
+    }
 
 
 
