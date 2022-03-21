@@ -4,8 +4,9 @@
 <div class="container-fluid text-center">
   <div>
     <h2>Manage children</h2>
-    <div class="m-2">
-   <!--   <a class="h3"  th:href="@{/users/new}">Add new children</a> -->
+    <a class="h3" th:href="@{children/add}">Add new children</a>
+    <div th="if${message}"class="alert alert-success text-center">
+      [[${message}}]]
     </div>
   </div>
   <table class="table" table-bordered>
@@ -40,6 +41,9 @@
     </th:block>
     </tbody>
   </table>
+  <div>
+    <a class="h5 text-center" th:href="@{/admin}">Back from whence you came</a>
+  </div>
 </div>
 </body>
 </html>

@@ -17,6 +17,6 @@ public class ScheduleController {
 
         model.addAttribute("allEmployees", employeeService.getAllEmployees());
 
-        return "manage-schedules";
+        return "manage_schedules";
     }
 }

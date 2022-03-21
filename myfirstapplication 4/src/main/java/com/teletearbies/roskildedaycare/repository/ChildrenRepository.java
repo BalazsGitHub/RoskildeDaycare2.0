@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ChildrenRepository extends CrudRepository<Children, Integer> {
-
-
+    public Long countById(Integer id);
 }
