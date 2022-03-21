@@ -26,8 +26,8 @@ public class Employee {
     private Schedule employeeSchedule;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "employee_id")
-    private User user_id;
+    @JoinColumn(name = "user_id")
+    private User userId;
 
 
     public Employee(String firstName, String lastName, String address, String phoneNumber) {

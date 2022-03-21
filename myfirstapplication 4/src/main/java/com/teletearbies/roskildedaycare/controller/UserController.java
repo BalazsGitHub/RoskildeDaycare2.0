@@ -18,9 +18,6 @@ public class UserController {
     public String listAllUsers(Model model) {
         List<User> listUsers = userService.getAllUsers();
         model.addAttribute("listUsers", listUsers);
-        return "users";
+        return "manage_users";
     }
-
-
-
 }

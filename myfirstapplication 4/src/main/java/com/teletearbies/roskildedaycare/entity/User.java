@@ -17,6 +17,9 @@ public class User {
     @Column(nullable = false, length = 15)
     private String password;
 
+    @OneToOne(mappedBy = "userId")
+    private Employee employee;
+
     public User(String username, String password) {
         this.username = username;
         this.password = password;

@@ -5,7 +5,7 @@
     <div>
         <h2>Manage user</h2>
         <div class="m-2">
-            <!--   <a class="h3"  th:href="@{/users/new}">Add new children</a> -->
+            <!--   <a class="h3"  th:href="@{/users/new}">Add new user</a> -->
         </div>
     </div>
     <table class="table" table-bordered>
@@ -17,15 +17,15 @@
             <th></th>
         </tr>
         <tbody>
-        <th:block th:each="user : ${#lists}">
+        <th:block th:each="user : ${listUsers}">
             <tr>
                 <td>[[${user.id}]]</td>
                 <td>[[${user.username}]]</td>
                 <td>[[${user.password}]]</td>
                 <td>
                 <td>
-                    <a class="h4 mr-3" th:href="@{'/user/edit/' + ${user.id}}">Edit</a>
-                    <a class="h4" th:href="@{'user/delete/' + ${user.id}}">Delete</a>
+                    <a class="h4 mr-3" th:href="@{'/users/edit/' + ${user.id}}">Edit</a>
+                    <a class="h4" th:href="@{'users/delete/' + ${user.id}}">Delete</a>
                 </td>
                 </td>
             </tr>
