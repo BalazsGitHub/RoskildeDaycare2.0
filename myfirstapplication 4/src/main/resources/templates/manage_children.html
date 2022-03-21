@@ -5,7 +5,7 @@
   <div>
     <h2>Manage children</h2>
     <a class="h3" th:href="@{children/add}">Add new children</a>
-    <div th: if="${message}"class="alert alert-success text-center">
+    <div th:if="${message}"class="alert alert-success text-center">
       [[${message}]]
     </div>
   </div>
@@ -33,8 +33,8 @@
         <td>[[${children.contactNumber}]]</td>
         <td>
         <td>
-          <a class="h4 mr-3" th:href="@{'/children/edit/' + ${children.id}}">Edit</a>
-          <a class="h4" th:href="@{'children/delete/' + ${children.id}}">Delete</a>
+          <a class="p mr-3 text-white" th:href="@{'/children/edit/' + ${children.id}}">Edit</a>
+          <a class="p text-white" th:href="@{'children/delete/' + ${children.id}}">Delete</a>
         </td>
         </td>
       </tr>

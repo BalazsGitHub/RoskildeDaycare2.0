@@ -37,7 +37,7 @@ public class ChildrenController {
     @PostMapping("/children/save")
     public String saveChildren(Children children, RedirectAttributes redirectAttributes) {
         childrenService.saveChildren(children);
-        redirectAttributes.addFlashAttribute("message", "New child was saved!");
+        redirectAttributes.addFlashAttribute("message", "Child info saved!");
         return "redirect:/childrenList";
     }
 
@@ -52,7 +52,7 @@ public class ChildrenController {
         try {
             Children children = childrenService.getChildren(id);
             model.addAttribute("children", children);
-            return "manage_children"; //Maybe not good
+            return "children_form"; //Maybe not good
 
         } catch (ChildrenNotFoundException e) {
             redirectAttributes.addFlashAttribute("message", e.getMessage());
@@ -66,7 +66,7 @@ public class ChildrenController {
         public String deleteChildren (@PathVariable("id") Integer id, RedirectAttributes redirectAttributes){
             try {
                 childrenService.deleteChildren(id);
-                redirectAttributes.addFlashAttribute("message", "Children was deleted!");
+                redirectAttributes.addFlashAttribute("message", "Child was deleted!");
             } catch (ChildrenNotFoundException e) {
                 redirectAttributes.addFlashAttribute("message", e.getMessage());
 

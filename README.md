@@ -5,13 +5,8 @@
 
 ## Code:
 
--Connect to database
 
--Login window
-
--Users page
-
--Children page
+-Users page (maybe)
 
 -Waiting list
 
