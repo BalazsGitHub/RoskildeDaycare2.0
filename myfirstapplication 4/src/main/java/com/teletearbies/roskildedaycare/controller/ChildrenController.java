@@ -1,6 +1,7 @@
 package com.teletearbies.roskildedaycare.controller;
 
 import com.teletearbies.roskildedaycare.entity.Children;
+import com.teletearbies.roskildedaycare.service.ChildrenNotFoundException;
 import com.teletearbies.roskildedaycare.service.ChildrenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,19 +49,30 @@ public class ChildrenController {
     @RequestMapping("/children/edit/{id}")
     public String editChildren(@PathVariable("id") Integer id, Model model, RedirectAttributes redirectAttributes) {
 
+        try {
+            Children children = childrenService.getChildren(id);
+            model.addAttribute("children", children);
+            return "manage_children"; //Maybe not good
 
-        Children children = childrenService.getChildren(id);
-        model.addAttribute("children", children);
-        return "redirect:/childrenList"; //Maybe not good
-
+        } catch (ChildrenNotFoundException e) {
+            redirectAttributes.addFlashAttribute("message", e.getMessage());
+            model.addAttribute("pageTitle", "edit user (ID: " + id + ")");
+            return "redirect:/childrenList"; //Maybe not good
+        }
     }
 
-    @RequestMapping("/children/delete/{id}")
-    public String deleteChildren(@PathVariable("id") Integer id, RedirectAttributes redirectAttributes) {
-        childrenService.deleteChildren(id);
-        redirectAttributes.addFlashAttribute("message", "Children was deleted!");
-        return "redirect:/childrenList"; //Maybe is good
 
+        @RequestMapping("/children/delete/{id}")
+        public String deleteChildren (@PathVariable("id") Integer id, RedirectAttributes redirectAttributes){
+            try {
+                childrenService.deleteChildren(id);
+                redirectAttributes.addFlashAttribute("message", "Children was deleted!");
+            } catch (ChildrenNotFoundException e) {
+                redirectAttributes.addFlashAttribute("message", e.getMessage());
+
+            }
+            return "redirect:/childrenList";
+
+
+        }
     }
-}
-

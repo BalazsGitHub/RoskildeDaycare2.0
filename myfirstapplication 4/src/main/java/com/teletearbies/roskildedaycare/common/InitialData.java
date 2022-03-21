@@ -24,19 +24,20 @@ public class InitialData {
     @Autowired
     ChildrenService childrenService;
 
-    //@PostConstruct
-   // public void initialiseDatabase(){
-      //  User user = new User("SandraAdmin", "admin123");
-    //    userService.saveUser(user);
+    @PostConstruct
+    public void initialiseDatabase(){
+        User user = new User("SandraAdmin", "admin123");
+      userService.saveUser(user);
 
-  //      Employee employee1 = new Employee("Tom", "Adams", "Some street", "+453939393");
-//        Employee employee2 = new Employee("Daniel", "Szabo", "Some street", "+453934493");
+         Employee employee1 = new Employee("Tom", "Adams", "Some street", "+453939393");
+         Employee employee2 = new Employee("Daniel", "Szabo", "Some street", "+453934493");
 
-        //employeeService.saveEmployee(employee1);
-       // employeeService.saveEmployee(employee2);
+          employeeService.saveEmployee(employee1);
+          employeeService.saveEmployee(employee2);
 
 
-     //   Children children1 = new Children("Laura", "Thomasen", "David", "Thomasen", "Some street", "+5522392i39");
-   //     childrenService.saveChildren(children1);
+          Children children1 = new Children("Laura", "Thomasen", "David", "Thomasen", "Some street", "+5522392i39");
+          childrenService.saveChildren(children1);
     }
-//}
+  }
+

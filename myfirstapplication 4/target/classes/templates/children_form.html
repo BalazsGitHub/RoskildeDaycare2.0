@@ -1,12 +1,14 @@
 <head th:replace="fragments/header :: head"></head>
 <body>
+
 <div class="container-fluid">
     <h2 class="text-center">Add New Children</h2>
+    <h2 class="text/center" > [[${pageTitle}]]</h2>
 </div>
 <!--  method attribute specifies how to send form-data  -->
 <!--  method="post" = sent as http -->
 <form th:action="@{/children/save}" method="post" th:object="${children}" style="max-width: 500px; margin: 0 auto;">
-
+<input type="hidden" th:field="*{id}">
     <!-- th:object="${user} = same as showNewForm attribute -->
     <div class="border border-secondary rounded p-3">
         <div class="row2">
