@@ -20,25 +20,27 @@
     </div>
 
     <div class="main">
-
-
-
         <table class="table">
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Phone</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Phone Number</th>
                 <th scope="col">Address</th>
+                <th scope="col">Shift Start</th>
+                <th scope="col">Shift End</th>
                 <th scope="col">Actions</th>
             </tr>
             </thead>
-            <tbody>
             <tr th:each="employee : ${allEmployees}">
                 <td th:text="${employee.id}"></td>
-                <td th:text="${employee.name}"></td>
+                <td th:text="${employee.firstName}"></td>
+                <td th:text="${employee.lastName}"></td>
                 <td th:text="${employee.phoneNumber}"></td>
                 <td th:text="${employee.address}"></td>
+                <td th:text="${employee.employeeSchedule.shiftFrom}"></td>
+                <td th:text="${employee.employeeSchedule.shiftTo}"></td>
                 <td>
                     <a th:href="@{/editSchedule/}">Schedule</a>
                     <a th:href="@{/removeEmployee}">Remove</a>
@@ -47,9 +49,7 @@
 
             </tbody>
         </table>
-
     </div>
-
 </div>
 </body>
 </html>
