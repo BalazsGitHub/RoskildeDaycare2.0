@@ -20,7 +20,18 @@
     </div>
 
     <div class="main">
-        <!-- EDIT SCHEDULE COMES HERE -->
+        <div style="margin-top: 150px;">
+            <div th:text="'Inputting scheuled for '+${employee.firstName}+ ' '+${employee.lastName}"></div>
+            <form th:action="@{/addScheduleShiftFor/{id}(id = ${employee.id})}">
+                <label for="from">Input the start  date of the shift: </label>
+                <input type="date" id="from" name="shiftFrom">
+                <br>  <br>
+                <label for="to">Input the end date of the shift: </label>
+                <input type="date" id="to" name="shiffTo">
+                <br>  <br>
+                <input type="submit" value="Submit schedule">
+            </form>
+        </div>
     </div>
 </div>
 </body>

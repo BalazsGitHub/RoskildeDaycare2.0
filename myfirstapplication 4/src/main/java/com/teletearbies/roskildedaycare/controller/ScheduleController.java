@@ -1,13 +1,18 @@
 package com.teletearbies.roskildedaycare.controller;
 
 import com.teletearbies.roskildedaycare.service.EmployeeService;
+import com.teletearbies.roskildedaycare.service.ScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ScheduleController {
+
+    @Autowired
+    ScheduleService scheduleService;
 
     @Autowired
     EmployeeService employeeService;
@@ -19,4 +24,36 @@ public class ScheduleController {
 
         return "manage_schedules";
     }
+
+    @RequestMapping("/editSchedule/{id}")
+    public String getEditschdulePage(@PathVariable("id") int id, Model model){
+        model.addAttribute("employee", employeeService.findById(id));
+        return "edit_schedules";
+    }
+
+    /*@RequestMapping("/addScheduleShiftFor/{id}")
+    public String addScheduleShiftFor(@PathVariable("id") int id,
+                                      @RequestParam("shiftStart") String shiftStart,
+                                      @RequestParam("shiftEnd") String shiftEnd,
+                                      Model model){
+        Employee employee = employeeService.findById(id);
+
+        String ISO_8601_24H_FULL_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ISO_8601_24H_FULL_FORMAT);
+
+        LocalDateTime dateFrom = LocalDateTime.parse(shiftStart, formatter);
+        LocalDateTime dateTo = LocalDateTime.parse(shiftEnd, formatter);
+
+       Schedule schedule = new Schedule(dateFrom, dateTo);
+
+        employee.setEmployeeSchedule(schedule);
+        schedule.setEmployee(employee);
+
+        scheduleService.saveSchedule(schedule);
+
+
+        return "redirect:/createWorkSchedules";
+    }
+*/
+
 }

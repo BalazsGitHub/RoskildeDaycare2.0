@@ -1,16 +1,11 @@
 <head th:replace="fragments/header :: head"></head>
-
 <body>
 <div class="container-fluid text-center">
-    <!--<h1>Welcome to my application</h1>-->
-    <!--    <a class="h2" th:href="@{/users}">Manage users</a>-->
-
     <div class="row navbar">
         <div class="row account-info">
             <div>Logged in as: </div>
             <div th:text="${adminName}"></div>
         </div>
-
         <div class="row nav-links">
             <a th:href="@{/displayAllUsers}">Manage users</a>
             <a th:href="@{/createWorkSchedules}">Manage schedules</a>
@@ -18,7 +13,6 @@
             <a th:href="@{/childrenList}">Manage children</a>
         </div>
     </div>
-
     <div class="main">
         <table class="table">
             <thead>
@@ -33,6 +27,7 @@
                 <th scope="col">Actions</th>
             </tr>
             </thead>
+            <tbody>
             <tr th:each="employee : ${allEmployees}">
                 <td th:text="${employee.id}"></td>
                 <td th:text="${employee.firstName}"></td>
@@ -46,7 +41,6 @@
                     <a th:href="@{/removeEmployee}">Remove</a>
                 </td>
             </tr>
-
             </tbody>
         </table>
     </div>
