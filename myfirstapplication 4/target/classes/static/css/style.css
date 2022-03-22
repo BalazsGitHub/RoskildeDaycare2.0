@@ -7,7 +7,8 @@ body{
 .row {
     display: flex;
     flex-direction: row;
-    height: 600px !important;
+    /*height: 600px !important;*/
+
 }
 .row2 {
     display: flex;
@@ -51,11 +52,12 @@ body{
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 1px solid grey;
-    height: 50px;
+    height: 50px !important;;
 }
 
 a{
     text-decoration: none;
+    color: white;
 }
 
 .account-info{

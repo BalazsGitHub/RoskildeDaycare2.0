@@ -23,25 +23,21 @@ public class InitialData {
 
     @Autowired
     ChildrenService childrenService;
-
+/*
     @PostConstruct
     public void initialiseDatabase(){
         User user = new User("SandraAdmin", "admin123");
-      userService.saveUser(user);
-
+        userService.saveUser(user);
          Employee employee1 = new Employee("Tom", "Adams", "Some street", "+453939393");
          Employee employee2 = new Employee("Daniel", "Szabo", "Some street", "+453934493");
          Employee employee3 = new Employee("Mette", "Sørensen", "Gadevej 45", "+4531233443");
          Employee employee4 = new Employee("Sanna", "Svensson", " FikaGata 41", "+45567493");
          Employee employee5 = new Employee("Anitta", "Otz", " Gladestræde 15" , "+45596493");
-
           employeeService.saveEmployee(employee1);
           employeeService.saveEmployee(employee2);
           employeeService.saveEmployee(employee3);
           employeeService.saveEmployee(employee4);
           employeeService.saveEmployee(employee5);
-
-
           Children children1 = new Children("Laura", "Thomasen", "David", "Thomasen", "Absalonsgade 1", "+452239239");
           Children children2 = new Children("Emma", "Larsen", "Mads", "Larsen", "Elmegade 23", "+452392739");
           Children children3 = new Children("Lasse", "Petersen", "Pia", "Petersen", "Carlsbergvej 45", "+458345763");
@@ -64,6 +60,6 @@ public class InitialData {
           childrenService.saveChildren(children9);
           childrenService.saveChildren(children10);
           childrenService.saveChildren(children11);
-    }
+    }*/
   }
 
