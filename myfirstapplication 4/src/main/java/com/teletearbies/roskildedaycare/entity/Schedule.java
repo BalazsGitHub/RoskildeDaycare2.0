@@ -1,7 +1,5 @@
 package com.teletearbies.roskildedaycare.entity;
 
-import com.teletearbies.roskildedaycare.entity.Employee;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -10,7 +8,7 @@ import java.time.LocalDateTime;
 public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer schedule_id;
+    private Integer id;
 
 
     @OneToOne(mappedBy = "employeeSchedule")
@@ -21,19 +19,19 @@ public class Schedule {
 
     public Schedule(){}
 
-    public Schedule(Integer schedule_id, Employee employee, String shiftName, LocalDateTime time) {
-        this.schedule_id = schedule_id;
+    public Schedule(Integer id, Employee employee, String shiftName, LocalDateTime time) {
+        this.id = id;
         this.employee = employee;
         this.shiftName = shiftName;
         this.time = time;
     }
 
-    public Integer getSchedule_id() {
-        return schedule_id;
+    public Integer getId() {
+        return id;
     }
 
-    public void setSchedule_id(Integer schedule_id) {
-        this.schedule_id = schedule_id;
+    public void setId(Integer schedule_id) {
+        this.id = schedule_id;
     }
 
     public Employee getEmployee() {

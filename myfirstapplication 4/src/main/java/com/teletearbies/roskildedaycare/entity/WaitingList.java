@@ -23,20 +23,20 @@ public class WaitingList {
 
     @Column(length = 45, nullable = false, name = "address")
     private String address;
-    @Column(length = 45, nullable = false, name = "phone_number")
-    private String phoneNumber;
+    @Column(length = 45, nullable = false, name = "contact_number")
+    private String contactNumber;
 
     public WaitingList(){
 
     }
 
-    public WaitingList(String firstName, String lastName, String parentFirstName, String parentLastName, String address, String phoneNumber) {
+    public WaitingList(String firstName, String lastName, String parentFirstName, String parentLastName, String address, String contactNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.parentFirstName = parentFirstName;
         this.parentLastName = parentLastName;
         this.address = address;
-        this.phoneNumber = phoneNumber;
+        this.contactNumber = contactNumber;
     }
 
     public Integer getId() {
@@ -87,11 +87,11 @@ public class WaitingList {
         this.address = address;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getContactNumber() {
+        return contactNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setContactNumber(String phoneNumber) {
+        this.contactNumber = phoneNumber;
     }
 }
