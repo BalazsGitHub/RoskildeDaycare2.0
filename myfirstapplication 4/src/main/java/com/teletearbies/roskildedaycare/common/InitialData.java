@@ -2,11 +2,13 @@
 package com.teletearbies.roskildedaycare.common;
 
 import com.teletearbies.roskildedaycare.entity.Children;
+import com.teletearbies.roskildedaycare.entity.WaitingList;
 import com.teletearbies.roskildedaycare.service.ChildrenService;
 import com.teletearbies.roskildedaycare.entity.Employee;
 import com.teletearbies.roskildedaycare.service.EmployeeService;
 import com.teletearbies.roskildedaycare.entity.User;
 import com.teletearbies.roskildedaycare.service.UserService;
+import com.teletearbies.roskildedaycare.service.WaitingListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
@@ -23,8 +25,11 @@ public class InitialData {
 
     @Autowired
     ChildrenService childrenService;
-/*
-    @PostConstruct
+
+    @Autowired
+    WaitingListService waitingListService;
+
+   /* @PostConstruct
     public void initialiseDatabase(){
         User user = new User("SandraAdmin", "admin123");
         userService.saveUser(user);
@@ -60,6 +65,10 @@ public class InitialData {
           childrenService.saveChildren(children9);
           childrenService.saveChildren(children10);
           childrenService.saveChildren(children11);
+        WaitingList waitingList1 = new WaitingList("Tim", "Waiter", "Morten", "Waiter", "Liongade 6.", "+450419259");
+        WaitingList waitingList2 = new WaitingList("Sophia", "Rock", "Millie", "Rock", "Starway 12.", "+450142730");
+        waitingListService.saveWaitingList(waitingList1);
+        waitingListService.saveWaitingList(waitingList2);
     }*/
   }
 
