@@ -9,10 +9,13 @@ public class Schedule {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer schedule_id;
+    private Integer id;
 
     @OneToOne(mappedBy = "employeeSchedule")
     private Employee employee;
+
+    @Column(length = 45, name = "employeeName")
+    private String employeeName;
 
     @Column(length = 45, name = "monday")
     private String monday;
@@ -33,7 +36,8 @@ public class Schedule {
     public Schedule() {
     }
 
-    public Schedule(String monday, String tuesday, String wednesday, String thursday, String friday) {
+    public Schedule(String employeeName, String monday, String tuesday, String wednesday, String thursday, String friday) {
+        this.employeeName = employeeName;
         this.monday = monday;
         this.tuesday = tuesday;
         this.wednesday = wednesday;
@@ -41,12 +45,12 @@ public class Schedule {
         this.friday = friday;
     }
 
-    public Integer getSchedule_id() {
-        return schedule_id;
+    public Integer getId() {
+        return id;
     }
 
-    public void setSchedule_id(Integer schedule_id) {
-        this.schedule_id = schedule_id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Employee getEmployee() {
@@ -55,6 +59,14 @@ public class Schedule {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 
     public String getMonday() {

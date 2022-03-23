@@ -26,7 +26,7 @@ public class InitialData {
     @Autowired
     ScheduleService scheduleService;
 
-  /*  @PostConstruct
+   /*@PostConstruct
     public void initialiseDatabase() {
         User user = new User("SandraAdmin", "admin123");
         userService.saveUser(user);
@@ -34,10 +34,11 @@ public class InitialData {
         Employee employee2 = new Employee("Daniel", "Szabo", "Some street", "+453934493");
         employeeService.saveEmployee(employee1);
         employeeService.saveEmployee(employee2);
-        Schedule schedule1 = new Schedule("8:00 - 16:00", "8:00 - 16:00", "8:00 - 16:00", "8:00 - 16:00", "8:00 - 15:00");
-        Schedule schedule2 = new Schedule("8:00 - 16:00", "8:00 - 16:00", "8:00 - 16:00", "8:00 - 16:00", "8:00 - 15:00");
+        Schedule schedule1 = new Schedule("Tom Adams","8:00 - 16:00", "8:00 - 16:00", "8:00 - 16:00", "8:00 - 16:00", "8:00 - 15:00");
+        Schedule schedule2 = new Schedule("Daniel Szabo","8:00 - 16:00", "8:00 - 16:00", "8:00 - 16:00", "8:00 - 16:00", "8:00 - 15:00");
         scheduleService.saveSchedule(schedule1);
         scheduleService.saveSchedule(schedule2);
+
         Children children1 = new Children("Laura", "Thomasen", "David", "Thomasen", "Absalonsgade 1", "+452239239");
         Children children2 = new Children("Emma", "Larsen", "Mads", "Larsen", "Elmegade 23", "+452392739");
         Children children3 = new Children("Lasse", "Petersen", "Pia", "Petersen", "Carlsbergvej 45", "+458345763");
@@ -66,4 +67,3 @@ public class InitialData {
         waitingListService.saveWaitingList(waitingList2);
     }*/
 }
-

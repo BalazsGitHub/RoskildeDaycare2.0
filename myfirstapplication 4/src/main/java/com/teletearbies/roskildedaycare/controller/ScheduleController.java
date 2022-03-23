@@ -29,6 +29,13 @@ public class ScheduleController {
         return "manage_schedules";
     }
 
+    @RequestMapping("/createWorkSchedule")
+    public String manageEmployeeSchedule(Model model) {
+        model.addAttribute("allEmployees", employeeService.getAllEmployees());
+
+        return "manage_schedules";
+    }
+
     @RequestMapping("/editSchedule/{id}")
     public String getEditschdulePage(@PathVariable("id") int id, Model model){
         model.addAttribute("employee", employeeService.findById(id));
