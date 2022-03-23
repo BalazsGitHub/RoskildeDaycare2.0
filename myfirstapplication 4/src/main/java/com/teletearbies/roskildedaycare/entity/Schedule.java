@@ -1,37 +1,52 @@
 package com.teletearbies.roskildedaycare.entity;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+
 
 @Entity
 @Table(name = "schedule")
 public class Schedule {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
+    private Integer schedule_id;
 
     @OneToOne(mappedBy = "employeeSchedule")
     private Employee employee;
 
-    private String shiftName;
-    private LocalDateTime time;
+    @Column(length = 45, name = "monday")
+    private String monday;
 
-    public Schedule(){}
+    @Column(length = 45, name = "tuesday")
+    private String tuesday;
 
-    public Schedule(Integer id, Employee employee, String shiftName, LocalDateTime time) {
-        this.id = id;
-        this.employee = employee;
-        this.shiftName = shiftName;
-        this.time = time;
+    @Column(length = 45, name = "wednesday")
+    private String wednesday;
+
+    @Column(length = 45, name = "thursday")
+    private String thursday;
+
+    @Column(length = 45, name = "friday")
+    private String friday;
+
+
+    public Schedule() {
     }
 
-    public Integer getId() {
-        return id;
+    public Schedule(String monday, String tuesday, String wednesday, String thursday, String friday) {
+        this.monday = monday;
+        this.tuesday = tuesday;
+        this.wednesday = wednesday;
+        this.thursday = thursday;
+        this.friday = friday;
     }
 
-    public void setId(Integer schedule_id) {
-        this.id = schedule_id;
+    public Integer getSchedule_id() {
+        return schedule_id;
+    }
+
+    public void setSchedule_id(Integer schedule_id) {
+        this.schedule_id = schedule_id;
     }
 
     public Employee getEmployee() {
@@ -42,19 +57,43 @@ public class Schedule {
         this.employee = employee;
     }
 
-    public String getShiftName() {
-        return shiftName;
+    public String getMonday() {
+        return monday;
     }
 
-    public void setShiftName(String shiftName) {
-        this.shiftName = shiftName;
+    public void setMonday(String monday) {
+        this.monday = monday;
     }
 
-    public LocalDateTime getTime() {
-        return time;
+    public String getTuesday() {
+        return tuesday;
     }
 
-    public void setTime(LocalDateTime time) {
-        this.time = time;
+    public void setTuesday(String tuesday) {
+        this.tuesday = tuesday;
+    }
+
+    public String getWednesday() {
+        return wednesday;
+    }
+
+    public void setWednesday(String wednesday) {
+        this.wednesday = wednesday;
+    }
+
+    public String getThursday() {
+        return thursday;
+    }
+
+    public void setThursday(String thursday) {
+        this.thursday = thursday;
+    }
+
+    public String getFriday() {
+        return friday;
+    }
+
+    public void setFriday(String friday) {
+        this.friday = friday;
     }
 }

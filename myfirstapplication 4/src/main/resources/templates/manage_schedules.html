@@ -6,39 +6,34 @@
             <div>Logged in as: </div>
             <div th:text="${adminName}"></div>
         </div>
-        <div class="row nav-links">
-            <a th:href="@{/displayAllUsers}">Manage users</a>
-            <a th:href="@{/createWorkSchedules}">Manage schedules</a>
-            <a th:href="@{/displayWaitingList}">Manage waiting list</a>
-            <a th:href="@{/childrenList}">Manage children</a>
-        </div>
     </div>
     <div class="main">
         <table class="table">
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Phone Number</th>
-                <th scope="col">Address</th>
-                <th scope="col">Shift Start</th>
-                <th scope="col">Shift End</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Monday</th>
+                <th scope="col">Tuesday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Thursday</th>
+                <th scope="col">Friday</th>
                 <th scope="col">Actions</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="employee : ${allEmployees}">
-                <td th:text="${employee.id}"></td>
-                <td th:text="${employee.firstName}"></td>
-                <td th:text="${employee.lastName}"></td>
-                <td th:text="${employee.phoneNumber}"></td>
-                <td th:text="${employee.address}"></td>
-                <td th:text="${employee.employeeSchedule.shiftFrom}"></td>
-                <td th:text="${employee.employeeSchedule.shiftTo}"></td>
+            <tr th:each="schedule : ${scheduleList}">
+                <td>[[${schedule.schedule_id}]]</td>
+                <td>[[${schedule.monday}]]</td>
+                <td>[[${schedule.tuesday}]]</td>
+                <td>[[${schedule.wednesday}]]</td>
+                <td>[[${schedule.thursday}]]</td>
+                <td>[[${schedule.friday}]]</td>
                 <td>
-                    <a th:href="@{/editSchedule/}">Schedule</a>
-                    <a th:href="@{/removeEmployee}">Remove</a>
+                <td>
+                    <a th:href="@{/editSchedule/}">Edit</a>
+                    <a th:href="@{/removeSchedule}">Remove</a>
                 </td>
             </tr>
             </tbody>

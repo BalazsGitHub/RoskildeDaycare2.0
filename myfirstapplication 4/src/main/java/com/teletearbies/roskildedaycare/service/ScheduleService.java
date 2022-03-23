@@ -13,7 +13,7 @@ public class ScheduleService {
     @Autowired
     ScheduleRepository scheduleRepository;
 
-    public void saveEmployee(Schedule schedule) {
+    public void saveSchedule(Schedule schedule) {
         scheduleRepository.save(schedule);
     }
 
@@ -21,7 +21,7 @@ public class ScheduleService {
         return scheduleRepository.findById(id).get();
     }
 
-    public List<Schedule> getAllUsers() {
+    public List<Schedule> getAllSchedules() {
         return (List<Schedule>) scheduleRepository.findAll();
     }
 
