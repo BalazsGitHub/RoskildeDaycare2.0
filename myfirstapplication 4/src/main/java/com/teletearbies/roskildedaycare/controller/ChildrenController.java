@@ -61,18 +61,15 @@ public class ChildrenController {
         }
     }
 
-
-        @RequestMapping("/children/delete/{id}")
-        public String deleteChildren (@PathVariable("id") Integer id, RedirectAttributes redirectAttributes){
-            try {
-                childrenService.deleteChildren(id);
-                redirectAttributes.addFlashAttribute("message", "Child was deleted!");
-            } catch (ChildrenNotFoundException e) {
-                redirectAttributes.addFlashAttribute("message", e.getMessage());
-
-            }
-            return "redirect:/childrenList";
-
+    @RequestMapping("/children/delete/{id}")
+    public String deleteChildren(@PathVariable("id") Integer id, RedirectAttributes redirectAttributes) {
+        try {
+            childrenService.deleteChildren(id);
+            redirectAttributes.addFlashAttribute("message", "Child was deleted!");
+        } catch (ChildrenNotFoundException e) {
+            redirectAttributes.addFlashAttribute("message", e.getMessage());
 
         }
+        return "redirect:/childrenList";
     }
+}
