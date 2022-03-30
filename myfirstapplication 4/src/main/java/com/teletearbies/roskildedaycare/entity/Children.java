@@ -2,13 +2,18 @@ package com.teletearbies.roskildedaycare.entity;
 
 import javax.persistence.*;
 
+//How we create a database
+
+//We use the annotations so spring can understand what classes is responsible for what
+
 @Entity
 @Table(name = "children")
 public class Children {
         @Id
+        //to auto generate and make unique
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer id;
-
+// each variable makes a column
         @Column(nullable = false, unique = false, length = 45, name = "first_name")
         private String firstName;
 

@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Service
 public class WaitingListService {
+
     @Autowired private WaitingListRepository waitingListRepository;
 
     public void saveWaitingList(WaitingList waitingList) {

@@ -8,8 +8,19 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+
+//The only jobs of the service is to delete, update, retrieve data
+
 @Service
 public class ChildrenService {
+
+    //It uses the repository methods, even though we did not specify in the interface.
+
+    //Autowiring is the same as to be implementing the Children repository interface.
+    //Basically @Autowired makes it possible for you to instantiate classes / implementation without extending the interface, or creating a new object of a class
+    //It is a way to access the methods from the repository which extends the Crud interface
+
+
 
    @Autowired private ChildrenRepository childrenRepository;
 
@@ -17,6 +28,8 @@ public class ChildrenService {
     public void saveChildren(Children children) {
         childrenRepository.save(children);
     }
+
+
 
     public List<Children> getAllChildren() {
         return (List<Children>) childrenRepository.findAll();

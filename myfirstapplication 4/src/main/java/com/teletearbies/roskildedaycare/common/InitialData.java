@@ -1,12 +1,11 @@
 
 package com.teletearbies.roskildedaycare.common;
 
-import com.teletearbies.roskildedaycare.entity.*;
+
 import com.teletearbies.roskildedaycare.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
-import javax.annotation.PostConstruct;
 
 @Configuration
 public class InitialData {
@@ -69,4 +68,5 @@ public class InitialData {
         waitingListService.saveWaitingList(waitingList1);
         waitingListService.saveWaitingList(waitingList2);
     }*/
+
 }

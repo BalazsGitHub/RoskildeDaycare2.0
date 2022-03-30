@@ -1,6 +1,5 @@
 package com.teletearbies.roskildedaycare.controller;
 
-import com.teletearbies.roskildedaycare.entity.Children;
 import com.teletearbies.roskildedaycare.entity.Schedule;
 import com.teletearbies.roskildedaycare.service.ChildrenNotFoundException;
 import com.teletearbies.roskildedaycare.service.EmployeeService;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -39,7 +37,6 @@ public class ScheduleController {
 
         return "manage_schedules";
     }
-
 
     @RequestMapping("/schedule/edit/{id}")
     public String editSchedule(@PathVariable("id") Integer id, Model model, RedirectAttributes redirectAttributes) {
