@@ -25,8 +25,8 @@ public class InitialData {
 
     @Autowired
     ScheduleService scheduleService;
-
-/*   @PostConstruct
+/*
+ @PostConstruct
     public void initialiseDatabase() {
         User user1 = new User("SandraAdmin", "admin123");
         User user2 = new User("Bobman", "coolman");

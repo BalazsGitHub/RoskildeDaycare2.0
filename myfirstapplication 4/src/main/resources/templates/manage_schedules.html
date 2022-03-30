@@ -3,8 +3,8 @@
 <body>
 <div class="container-fluid text-center">
     <div>
-        <h2>Manage schedule</h2>
-        <a class="h3" th:href="@{schedule/add}">Add new schedule</a>
+        <h2 class="border-bottom-5">Manage schedule</h2>
+        <a class="h3 border-bottom-10"  th:href="@{schedule/add}">Add new schedule</a>
         <div th:if="${message}"class="alert alert-success text-center">
             [[${message}]]
         </div>
